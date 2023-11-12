@@ -1,0 +1,105 @@
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 或者按照实际需要调整高度 */
+}
+
+.messages {
+    width: 80%; /* 设置消息列表宽度为屏幕宽度的 80% */
+    max-width: 80%; /* 限制最大宽度，避免超出视口 */
+    margin: 0 auto; /* 上下保持原有的 margin，左右自动调整以居中 */
+    overflow-y: auto; /* 如果消息太多，允许滚动 */
+    height: calc(100vh - 100px); /* 高度需要根据输入框和其他元素的高度调整 */
+    padding: 10px; /* 或你希望的内边距大小 */
+}
+
+.messages li {
+    display: flex;
+    align-items: flex-start; /* 这将确保所有子元素对齐到容器的顶部 */
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 40px; /* 头像的尺寸 */
+    height: 40px;
+    border-radius: 50%; /* 圆形头像 */
+    background-color: #e9e0e0; /* 暂时用灰色代替，你可以用图片替换 */
+    align-self: start; /* 这将覆盖 flex 容器的 align-items 并将头像对齐到顶部 */
+    margin-right: 10px; /* 按需调整以在头像和消息之间提供空间 */
+}
+
+
+.user-avatar {
+    background-color: #93939d; /* 用户头像颜色 */
+}
+
+.bot-avatar {
+    background-color: green; /* AI头像颜色 */
+}
+
+.message-content {
+    background-color: #f0f0f0; /* 消息背景 */
+    padding-left: 20px; /* 上下左右的内边距 */
+    padding-right: 20px; /* 上下左右的内边距 */
+    padding-top: 10px; /* 上下左右的内边距 */
+    padding-bottom: 0px; /* 上下左右的内边距 */
+    max-width: calc(90% - 10px); /* 计算头像和间距 */
+    border-radius: 15px; /* 边框圆角 */
+    margin-bottom: 10px; /* 和下一条消息之间的间距 */
+    /* 消息内容样式 */
+    display: flex;
+    flex-direction: column; /* 排列文本 */
+    margin-top: 0;
+}
+
+
+.message-text {
+    margin: 0;
+    white-space: normal; /* 确保文本会换行 */
+    word-wrap: break-word; /* 长单词或 URL 会被断开以适应容器宽度 */
+}
+
+.input-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%; /* 把容器移动到屏幕中间 */
+    transform: translateX(-50%); /* 通过变换抵消容器宽度的一半，实现居中 */
+    width: 80%; /* 容器宽度设置为屏幕宽度的 80% */
+    display: flex;
+    justify-content: space-between; /* 确保按钮和输入框间有间隔 */
+    align-items: center;
+    padding: 10px;
+    background: white; /* 根据你的设计调整 */
+    box-shadow: 0px -2px 5px rgba(0,0,0,0.1);
+}
+
+textarea {
+    width: 100%; /* 可以根据需要调整 */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-container textarea {
+    width: 100%; /* 输入框占据所有可用空间 */
+    padding: 10px;
+    margin-right: 10px; /* 与按钮的间隔 */
+    box-sizing: border-box;
+}
+
+.input-container button {
+    min-width: 100px; /* 例如，按钮的最小宽度为 100px */
+    white-space: nowrap; /* 防止文字折行 */
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+
+
+.sender-name {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
